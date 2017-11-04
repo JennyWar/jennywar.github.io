@@ -47,9 +47,9 @@
 
 .about {
 	background-color: #ffffff;
-	text-align: center;
 	border: 2px solid #cccccc;
 	max-width: 650px;
+	max-height: 700px;
 	margin-right: 100px;
 	margin-left: 50px;
 	margin-top: 50px;
@@ -66,29 +66,30 @@
 	border-bottom: 2px solid #cccccc;
 }
 
-.ideximage {
-	float: left;
-	width: 30%;
-	margin-right: 10px;
-}
+.indeximage {
+	flex: 1;
+	padding-right: 10px;
+	padding-left: 22px;
+}	
 
 .connect {
 	color: #4aaaa5;
 	padding-left: 10px;
 	padding-bottom: 10px;
-	
+
 }
 
 .sidebar {
 	max-width: 270px;
 	background-color: #ffffff;
-	border: 1px solid #cccccc;
+	border: 2px solid #cccccc;
 	text-align: center;
 	max-height: 200px;
 	margin-top: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 5px;
+	display: inline-block;
 }
 
 .iconslist {

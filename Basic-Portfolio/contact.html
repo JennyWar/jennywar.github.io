@@ -8,32 +8,32 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<header>
-	<div class="headertitle">
-		<h1>Jennifer Guerra</h1> 
+<body class="body">
+<header class="header">
+	<div>
+		<h1 class="headertitle">Jennifer Guerra</h1> 
 	</div>
 	
 	<div>
 		<nav class="navbar">
-			<a href="index.html">About</a>
-			<a href="portfolio.html">Portfolio</a>
-			<a href="contact.html">Contact</a>
+			<a href="index.html" class="index">About</a>
+			<a href="portfolio.html" class="portfolionav">Portfolio</a>
+			<a href="contact.html" class="contact">Contact</a>
 		</nav>
 	</div>
 </header>
 
-<body>
 	<h2>Contact</h2>
-		<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
+		<form class="contactform" action="#" method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<label for="name">Name</label><br/>
 				<input class="name" name="name" type="text" value="" size="30" placeholder="John Smith" required/>
 				<br/>
 			</div>
 		
-			<div class="email">
+			<div class="name">
 				<label for="email">Email</label><br/>
-				<input class="email" name="email" type="text" value="" size="30" placeholder="example@gmail.com" required><br/>
+				<input class="name" name="email" type="text" value="" size="30" placeholder="example@gmail.com" required><br/>
 			</div>
 		
 			<div class="message">
@@ -47,19 +47,17 @@
 	<div class="sidebar">
 		<h2>Connect with Me</h2>
 			<nav class="iconslist">
-				<img src="assets/images/github.png"><a href="https://github.com/JennyWar"; alt="GithubAccount"; target="_blank"></a>
+				<img src="assets/images/github.png" class="github"><a href="https://github.com/JennyWar"; alt="GithubAccount"; target="_blank"></a>
 			
-				<img src="assets/images/linkedin.png"><a href="https://www.linkedin.com/in/jennifer-guerra-99320457/"; alt="linkedinAccount"; target="_blank"></a>
+				<img src="assets/images/linkedin.png" class="linked"><a href="https://www.linkedin.com/in/jennifer-guerra-99320457/"; alt="linkedinAccount"; target="_blank"></a>
 			
-				<img src="assets/images/overflow.png"><a href="https://stackexchange.com/users/11852624/jennywar"; alt="StackAccount"; target="_blank"></a>
+				<img src="assets/images/overflow.png" class="stackoverflow"><a href="https://stackexchange.com/users/11852624/jennywar"; alt="StackAccount"; target="_blank"></a>
 			</nav>
 	</div>
 					
+	<footer>
+		<h3 class="footer">&copy; Copyright 2017 Jennifer Guerra
+		</h3>
+	</footer>
 </body>
-
-<footer>
-	<h3 class="footer">&copy; Copyright 2017 Jennifer Guerra
-	</h3>
-</footer>
-
 </html>

@@ -1,20 +1,22 @@
 *{
 	box-sizing: border-box;
 	overflow: auto;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; 
 }
 .header {
 	background-color: #ffffff;
 	font-family: 'Georgia', Times, Times New Roman, serif;
 	border-bottom: 5px solid #cccccc;
 	display: flex;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-
+	margin: 0;
+	width: 100%;
+	display: flex;
 }
 
 .headertitle {
 	color: #ffffff;
 	background-color: #4aaaa5;
+	font-family: 'Georgia', Times, Times New Roman, serif;
 	margin: 0 0 0 100px;
 	padding: 10px;
 	line-height: 2;
@@ -23,6 +25,7 @@
 
 .navbar {
 	color: #cccccc;
+	font-family: 'Georgia', Times, Times New Roman, serif;
 	margin-left: 350px;
 	flex: 1;
 	line-height: 3;
@@ -37,7 +40,7 @@
 }
 
 .body {
-	background-image: url(http://tutvid.com/wp-content/uploads/2012/02/LinenTexture.jpg) no-repeat center fixed;
+	background-image: url("http://tutvid.com/wp-content/uploads/2012/02/LinenTexture.jpg");
 	margin: 0px;
 	font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -46,11 +49,16 @@
 	background-color: #ffffff;
 	text-align: center;
 	border: 2px solid #cccccc;
-	width: 650px;
+	max-width: 650px;
 	margin-right: 100px;
 	margin-left: 50px;
 	margin-top: 50px;
 	padding: 5px;
+}
+
+.par {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #777777;
 }
 
 .abouttitle {
@@ -64,12 +72,19 @@
 	margin-right: 10px;
 }
 
+.connect {
+	color: #4aaaa5;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	
+}
+
 .sidebar {
-	width: 270px;
+	max-width: 270px;
 	background-color: #ffffff;
 	border: 1px solid #cccccc;
 	text-align: center;
-	height: 200px;
+	max-height: 200px;
 	margin-top: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -87,9 +102,11 @@
 }
 
 .portfoliobody {
+	background-color: #ffffff;
 	width: 650px;
 	padding-right: 60px;
 	padding-left: 20px;
+
 }
 
 .portfoliobody::after {

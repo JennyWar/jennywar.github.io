@@ -1,6 +1,5 @@
 *{
 	box-sizing: border-box;
-	overflow: auto;
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; 
 }
 .header {
@@ -46,16 +45,23 @@
 	font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+.indexcontainer {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
 .about {
 	background-color: #ffffff;
 	border: 2px solid #cccccc;
 	max-width: 650px;
 	max-height: 700px;
-	margin-right: 100px;
-	margin-left: 50px;
-	margin-top: 50px;
+	margin-top: 10px;
 	padding: 5px;
 	display: inline-block;
+	margin-left: 100px;
+
 }
 
 .par {
@@ -90,7 +96,7 @@
 	margin: 10px;
 	padding: 10px;
 	display: inline-block;
-	height: 150px;
+	height: 250px;
 }
 
 .iconslist {
@@ -186,5 +192,9 @@
 	border-top: 5px solid #4aaaa5;
 	font-size: 12px;
 	width: 100%;
+	bottom: 0;
+	position: fixed;
+	clear: both;
+	margin: 0;
 
 }

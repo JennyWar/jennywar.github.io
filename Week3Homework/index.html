@@ -7,11 +7,15 @@
  
  <!--  // javascript link // -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- // added google fonts stylesheet link // -->
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
   <title>HangmanGame</title>
 
  <!--  // css links // -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -21,15 +25,16 @@
 	</header>
 		<br>
 	<container id="container" class="words">
-		<div id="click" class="press"></div>
+		<div id="click" class="press">Press any key to start!</div>
 		<div id="currentGuess" class="currentword">Current Word:</div>
 		<div id="ghostLtr" class="ghostLetters">
 		</div>
 	</container>
 		<br>
 	<container id="record" class="score">
-		<div id="winner" class="wins"></div>
-		<div id="guessesRemaining" class="numberGuesses"></div>
+		<div id="winner" class="wins">Wins:</div>
+		<div class="numberGuesses">Guesses Remaining:</div>
+		<div id="guessesRemaining"></div>
 		<div class="letters">Letters Used:</div>
 		<div id="alphabetUsed"></div>
 	</container>

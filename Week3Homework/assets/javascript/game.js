@@ -20,7 +20,6 @@ var currentGuess;
 var click;
 var ghostLtr;
 var record;
-var guessesRemaining;
 var winner = 0;
 var alphabetUsed = [];
 var lettersUsed = [];
@@ -47,23 +46,45 @@ document.onkeyup = function(event) {
 
 }
 
-// if the players guess matches a letter of the superheros//
+// have the players guess show up instead of the blank dashes//
 
 if(superPerson.indexOf(alphabetUsed) > -1) {
 	for(var i = 0; i < superPerson.length; i++) {
 		if(superPerson[i] === alphabetUsed) {
 			answerArray[i] = alphabetUsed;
-			document.getElementById('ghostLtr').innerHTML = alphabetUsed.join('_');
+			document.getElementById("ghostLtr").innerHTML = alphabetUsed.join("_");
 		}
 	}
 }
 
+// show how many guesses are left //
+
+var totalGuesses = 12;
+var guessesRemaining = [];
+
+if(guessesRemaining.indexOf(totalGuesses) > -1) {
+	for(var i = 0; i < 11; i--) {
+		if(guessesRemaining[i] === alphabetUsed) {
+			totalGuesses = guessesRemaining[i];
+			document.getElementById("guessesRemaining").innerHTML = totalGuesses;
+			console.log(guessesRemaining);
+		}
+	}
+}
+
+
+
+
+// if the player loses//
+
+// if the player wins //
+
 // to reset the game //
 
 // var reset = function () {
-// 	var totalgueses = 9;
-// 	var guesleft = 9;
-// 	guessedletter = [];
+// 	var totalGuesses = 12;
+// 	var guessesRemaining = [];
+// 	var lettersUsed = [];
 
 // 	updateLetterToGuess();
 // 	updateGuessesLeft();

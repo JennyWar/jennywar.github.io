@@ -44,14 +44,20 @@ document.onkeyup = function(event) {
 	document.getElementById('alphabetUsed').innerHTML = lettersUsed;
 
 
-}
 
 // have the players guess show up instead of the blank dashes//
 
 if(superPerson.indexOf(alphabetUsed) > -1) {
+
+	// var dashes = document.getElementById("ghostLtr").innerHTML;
+	// console.log(dashes);
+	// dashes[superPerson.indexOf(alphabetUsed)] = alphabetUsed;
+	// console.log(dashes);
+	// document.getElementById("ghostLtr").innerHTML = dashes;
 	for(var i = 0; i < superPerson.length; i++) {
 		if(superPerson[i] === alphabetUsed) {
 			answerArray[i] = alphabetUsed;
+			alphabetUsed = alphabetUsed.split('');
 			document.getElementById("ghostLtr").innerHTML = alphabetUsed.join("_");
 		}
 	}
@@ -62,7 +68,7 @@ if(superPerson.indexOf(alphabetUsed) > -1) {
 var totalGuesses = 12;
 var guessesRemaining = [];
 
-if(guessesRemaining.indexOf(totalGuesses) > -1) {
+if(guessesRemaining.indexOf(answerArray) > -1) {
 	for(var i = 0; i < 11; i--) {
 		if(guessesRemaining[i] === alphabetUsed) {
 			totalGuesses = guessesRemaining[i];
@@ -72,10 +78,13 @@ if(guessesRemaining.indexOf(totalGuesses) > -1) {
 	}
 }
 
+}
 
 
 
 // if the player loses//
+
+
 
 // if the player wins //
 

@@ -49,11 +49,11 @@ h1 {
 	align-content: center;
 }
 
-.ghostletters {
+.ghostLetters {
 	display: flex;
 	max-width: 100%;
 	color: white;
-	font-size: 110px;
+	font-size: 60px;
 	text-align: center;
 	margin: 0 auto;
 	background-color: black;
@@ -61,6 +61,7 @@ h1 {
 	flex: 1;
 	align-content: center;
 }
+
 
 .wins {
 	display: flex;
@@ -74,7 +75,7 @@ h1 {
 	flex: 2;
 }
 
-.numberguesses {
+.numberGuesses {
 	display: flex;
 	max-width: 60%;
 	color: white;
@@ -96,4 +97,18 @@ h1 {
 	background-color: black;
 	padding: 10px;
 	flex: 2;
+}
+
+#alphabetUsed {
+	display: flex;
+	max-width: 60%;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: black;
+	padding: 10px;
+	flex: 2;
+}
+
 }

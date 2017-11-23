@@ -1,0 +1,107 @@
+body {
+	background: url(../images/skulls.png);
+	font-family: 'Questrial', sans-serif;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: 600;
+	border: 2px solid white;
+	color: white;
+	max-width: 60%;
+	background-color: #ea7c33;
+	padding: 40px;
+	margin-top: 10px;
+	display: flex;
+}
+
+.instructions {
+	font-size: 18px;
+	font-weight: 400;
+	border: 2px solid white;
+	background-color: #3493af;
+	color: white;
+	max-width: 60%;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	margin-top: 10px;
+}
+
+.numberAndScore {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+.randomNumber {
+	font-size: 60px;
+	font-weight: 700;
+	border: 2px solid white;
+	background-color: #a3a33a;
+	max-width: 20%;
+	max-height: 40%;
+	text-align: center;
+	margin-right: 0;
+	margin-left: 25%;
+}
+
+.score {
+	font-size: 18px;
+	font-weight: 400;
+	color: white;
+	border: 2px solid white;
+	background-color: #3aa39a;
+	padding: 20px;
+	display: flex;
+	max-width: 50%;
+	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 25%;
+}
+
+.winsAndLosses, .winner, .loser {
+	display: flex;
+
+}
+
+.crystals {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+
+.currentScoreTitle {
+	font-size: 18px;
+	font-weight: 400;
+	border: 2px solid white;
+	background-color: #a33a6d;
+	color: white;
+	max-width: 40%;
+	display: flex;
+	padding: 15px;
+	margin-top: 10px;
+}
+
+.playersCurrentScore {
+	font-size: 60px;
+	font-weight: 400;
+	border: 2px solid white;
+	background-color: #a33a6d;
+	color: white;
+	max-width: 40%;
+	display: flex;
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+

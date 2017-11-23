@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- // linked javascript // -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.slim.js"
+	  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+	  crossorigin="anonymous">
+  	</script>
+	
+	<title>Crystals Collector</title>
+
+	<!-- link to bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- // added google fonts stylesheet link // -->
+  	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+	<!--  // css links // -->
+  	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+	<div class="container title">Crystals Collector</div>
+	<div id="rules" class=" container instructions">
+		<p>Game Instructions:</p>
+		<br>
+		<p>You will be given a random number at the start of the game.</p>
+		<br>
+		<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+		<br>
+		<p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
+		</p>
+		<br>
+		<p>the value of each crystal is hidden from you until you click on it.</p>
+		<br>
+		<p>Each time when the game starts, the game will change the values of each crystal.
+		</p>
+	</div>
+	<container class="container numberAndScore">
+		<div id="total" class="container randomNumber"></div>
+		<div class="container score">
+			<div id="message" class="winsAndLosses"></div>
+			<br>
+			<div class="winner">Wins:<span id="wins"></span></div>
+			<br>
+			<div class="loser">Losses:<span id="losses"></span></div>
+		</div>
+	</container>
+	<container class="card-group crystals">
+  		<div class="card">
+	    	<img id="firstCrystal" class="img-thumbnail" src="assets/images/crystal1.jpg" alt="cyrstal1">
+  		</div>
+  		<div class="card">
+    		<img id="secondCrystal" class="img-thumbnail" src="assets/images/crystal2.jpg" alt="crystal2">
+  		</div>
+  		<div class="card">
+    		<img id="thirdCrystal" class="img-thumbnail" src="assets/images/crystal3.png" alt="crystal3">
+    	</div>
+    	<div class="card">
+	    	<img id="fourthCrystal" class="img-thumbnail" src="assets/images/crystal4.jpg" alt="cyrstal4">
+  		</div>
+  	</container>
+	<div class="container currentScoreTitle">Your total score is:</div>
+	<div id="userTotal" class="container playersCurrentScore"></div>
+
+	<!-- // linked local javascript file // -->
+	<script type="text/javascript" src="assets/javascript/game.js">
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+}
+
+.body {
+	background-image: url(../images/space1.jpg);
+	font-family: 'Armata', sans-serif;
+}
+
+.title {
+	color: white;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.5;
+	max-width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	padding: 5px;
+	align-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.startingDiv {
+	display: flex;
+	flex-direction: column;
+	background-color: #7a8288;
+	max-width: 100%;
+	max-height: 100%; 
+	line-height: 1.5;
+	margin: auto;
+	
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: #7a8288;
+	max-width: 60%;
+	max-height: 60%; 
+	line-height: 1.5;
+	margin: auto;
+	border: 1px solid white;
+	padding-bottom: 10px;
+}
+
+.instructions {
+	padding-top: 10px;
+	margin: auto;
+}
+
+.btn {
+	max-inline-size: fit-content;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.image {
+	padding-top: 10px;
+	margin: auto;
+}
+
+/*I still need to make the page mobile responsive using media queries*/
+

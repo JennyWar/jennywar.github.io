@@ -1,0 +1,54 @@
+.body {
+	background-image: url(source.gif);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.allContent {
+	margin: 2% 3% 2% 3%;
+}
+
+.title, .search, .tvShows, .gifsDiv, .allContent {
+	background-color: #111;
+	border-radius: 40px;
+	color: #e9ecef;
+
+}
+
+.title, .search, .tvShows, .gifsDiv {
+	text-align: center;
+}
+
+.my-4 {
+	background-color: #e9ecef;
+}
+
+.paragraph {
+	padding-bottom: 20px;
+}
+
+.formAndShows {
+	display: flex;
+	flex-direction: row;
+}
+.search {
+	justify-content: flex-start;
+	padding: 20px;
+}
+
+.tvShows {
+	flex-direction: column;
+	margin-left: 20px;
+
+}
+
+.showParagraph {
+	padding-top: 10px;
+	line-height: 1.5;
+}
+
+.btn-dark {
+	margin-top: 10px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- // linked javascript // -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.slim.js"
+	  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+	  crossorigin="anonymous">
+  	</script>
+	
+	<title>GifTastic</title>
+
+	<!-- link to bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- // added google fonts stylesheet link // -->
+  	<link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+
+	<!--  // css links // -->
+  	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body class="body">
+	<div class="allContent">
+		<!-- The title of the page -->
+		<div class="title container">
+			<h1 class="display-3">GifTastic TV Shows</h1>
+	  		<p class="lead">Click on any of the buttons below to see 10 random gifs from that TV show. Don't see your favorite show listed? No problem! Just search for your favorite show and your show will be added.</p>
+	  		<hr class="my-4">
+	  		<p class="paragraph">The gifs are static when they are loaded. Just click on any gif and they will animate. If you click again, they will be static.</p>
+		</div>
+	<!-- 	The search bar to find shows not listed -->
+		<div class="formAndShows">
+			<div class="search">
+				<form role="form">
+		        	<div class="form-group">
+		             	<label for="search">Search for your favorite TV show:</label>
+		                <input type="text" class="form-control" id="searchShow">
+		            </div>
+		        	<button type="submit" class="btn btn-dark" id="addShow">Search
+		        	</button>
+		    	</form>
+			</div>
+			<br>
+			<!-- div where the buttons will be shown on the screen -->
+			<div class="tvShows">
+				<h6 class="showParagraph">TV Shows:</h6>
+				<div class="showButttons">
+					<!-- buttons with some tv shows already listed -->
+					<button type="button" class="btn btn-dark" data-show="Portlandia">Portlandia
+					</button>
+					<button type="button" class="btn btn-dark" data-show="Parks+And+Recreation">Parks and Recreation
+					</button>
+					<button type="button" class="btn btn-dark" data-show="South+Park">South Park
+					</button>
+					<button type="button" class="btn btn-dark" data-show="Workaholics">Workaholics
+					</button>
+					<button type="button" class="btn btn-dark" data-show="The+Daily+Show">The Daily Show
+					</button>
+					<button type="button" class="btn btn-dark" data-show="Silicon+Valley">Silicon Valley
+					</button>
+				</div>
+			</div>
+		</div>
+		<br>
+		<!-- Where the gifs will load -->
+		<div class="gifsDiv"></div>
+	</div>
+
+	<!-- link to javascript files -->
+
+	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+</body>
+</html>

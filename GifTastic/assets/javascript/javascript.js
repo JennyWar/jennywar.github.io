@@ -93,6 +93,7 @@ $(document).ready(function() {
             $(this).attr('src', $(this).attr('data-animate'));
             $(this).attr('data-state', 'animate');
             $('.body').css({'background-image': 'url(./assets/css/rainbow.gif)'});
+            // See if I can put the gif selected as the background??
             // $('.body').css({'background-image': + $(this).attr('data-animate')});
         } else {
             $(this).attr('src', $(this).attr('data-still'));

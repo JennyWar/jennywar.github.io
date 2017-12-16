@@ -2,97 +2,108 @@
 
 $(document).ready(function() {
 
-	// display gif when a button listing a show is clicked
+    var showArray = ['Portlandia', 'Silicon Valley', 'Parks and Recreation', 'South Park', 'Workaholics', 'The Simpsons', 'Seinfeld'];
 
-	$('.btn').on('click', function() {
+    // display gif when a button listing a show is clicked
 
-		event.preventDefault();
+    function apiQuery() {
 
-		// var showArray = ['Portlandia', 'Silicon Valley', 'Parks and Recreation', 'South Park', 'Workaholics'];
+        event.preventDefault();
 
-	      var tvShow = $(this).attr('data-show');
-	      var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' +
-	        tvShow + '&api_key=ik1W29mUaT0svhxwC5iGMZEtgBVjzKF4&rating=g&limit=10';
 
-	       	console.log(tvShow);
-	       	console.log(queryURL);
+        var tvShow = $(this).attr('data-show');
+        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' +
+            tvShow + '&api_key=ik1W29mUaT0svhxwC5iGMZEtgBVjzKF4&rating=g&limit=10';
 
-	      $.ajax({
-	        url: queryURL,
-	        method: "GET"
-	      }).done(function(response) {
-	        console.log(response);
+        console.log(tvShow);
+        console.log(queryURL);
 
-	        var results = response.data;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).done(function(response) {
+            console.log(response);
 
-	        console.log(results);
+            var results = response.data;
 
-	        // ========================
+            console.log(results);
 
-	        for (var i = 0; i < results.length; i++) {
+            // ========================
 
-	        var paragraph = $('<p>');
-	        paragraph.text("rating: " + results[i].rating);
+            for (var i = 0; i < results.length; i++) {
 
-	        var showImage = $('<img>');
-	        showImage.attr('src', results[i].images.fixed_height.url);
+                var paragraph = $('<p>');
+                paragraph.text("rating: " + results[i].rating);
 
-	        var showDiv = $('<div>');
+                var showImage = $('<img>');
+                showImage.addClass('imageClass');
+                showImage.attr('src', results[i].images.fixed_height_still.url);
+                showImage.attr('data-animate', results[i].images.fixed_height.url);
+                showImage.attr('data-still', results[i].images.fixed_height_still.url);
 
-	        showDiv.append(paragraph);
-	        showDiv.append(showImage);
+                var showDiv = $('<div>');
 
-	        $('.gifsDiv').prepend(showDiv);
-	        
-	        }
+                showDiv.append(paragraph);
+                showDiv.append(showImage);
 
-	    });
+                $('.gifsDiv').prepend(showDiv);
 
-	});
+            }
+
+        });
+
+    };
+
+    // functions to create a button from the user search term
+
+    function renderButtons() {
+        $('.showButtons').empty();
+
+        for (var i = 0; i < showArray.length; i++) {
+
+            var newButton = $('<button class="btn btn-dark">');
+            newButton.addClass('showIndex');
+            newButton.attr('data-show', showArray[i]);
+            newButton.text(showArray[i]);
+            $('.showButtons').append(newButton);
+        }
+    }
+
+
+    $('#addShow').on('click', function() {
+
+        var showIndex = $('#searchShow').val().trim();
+
+        showArray.push(showIndex);
+
+        renderButtons();
+
+        return false
+    });
+
+    $(document).on('click', '.showIndex', apiQuery);
+
+    renderButtons();
+
+    // makes the gif go from static to animate by clicking on the gif
+
+    $(document).on('click', '.imageClass', function() {
+        var state = $(this).attr('data-state');
+        if (state === 'still') {
+            $(this).attr('src', $(this).attr('data-animate'));
+            $(this).attr('data-state', 'animate');
+            $('.body').css({'background-image': 'url(./assets/css/rainbow.gif)'});
+            // $('.body').css({'background-image': + $(this).attr('data-animate')});
+        } else {
+            $(this).attr('src', $(this).attr('data-still'));
+            $(this).attr('data-state', 'still');
+            $('.body').css({'background-image': 'url(./assets/css/source.gif)'});
+        }
+        console.log(this);
+    });
+
+    $(document).on('click', '.body', function() {
+
+    })
+
 });
-
-// functions to create a button from the user search term
-
-// function renderButtons() {
-// 	$('.showButtons').empty();
-	
-// 	for (var i = 0; i < showArray.length; i++) {
-
-// 		var newButton = $('<button class="btn btn-dark">');
-// 		newButton.addClass('showIndex');
-// 		newButton.attr('data-show', showArray[i]);
-// 		newButton.text(showArray[i]);
-// 		$('.showButtons').append(newButton);
-// 	}
-// }
-
-
-// $('#addShow').on('click', function() {
-
-// 	var showIndex = $('#searchShow').val().trim();
-
-// 	showArray.push(showIndex);
-
-// 	renderButtons();
-
-// 	return false
-// });
-
-// $(document).on('click', '.showIndex');
-
-// renderButtons();
-
-// // makes the gif go from static to animate by clicking on the gif
-
-// $('img').on('click', function() {
-// 	var state = $(this).attr('data-state');
-// 	if (state === 'still') {
-// 		$(this).attr('src', $(this).attr('data-animate'));
-// 		$(this).attr('data-state', 'animate');
-//       } else {
-//         $(this).attr('src', $(this).attr('data-still'));
-//         $(this).attr('data-state', 'still');
-// 	}
-// });
-
-

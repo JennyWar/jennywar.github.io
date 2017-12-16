@@ -8,6 +8,7 @@
 
 .allContent {
 	margin: 2% 3% 2% 3%;
+	border: 0.45px solid white;
 }
 
 .title, .search, .tvShows, .gifsDiv, .allContent {
@@ -21,18 +22,35 @@
 	text-align: center;
 }
 
+.display-3 {
+	font-family: 'Walter Turncoat', cursive;
+}
+
+.lead {
+	font-family: 'Raleway', sans-serif;
+	padding-top: 10px;
+}
+
 .my-4 {
 	background-color: #e9ecef;
 }
 
 .paragraph {
 	padding-bottom: 20px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .formAndShows {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
+	font-family: 'Raleway', sans-serif;
 }
+
+.form-control {
+	margin-top: 15px;
+}
+
 .search {
 	justify-content: flex-start;
 	padding: 20px;
@@ -40,6 +58,7 @@
 
 .tvShows {
 	flex-direction: column;
+	justify-content: flex-end;
 	margin-left: 20px;
 
 }
@@ -51,4 +70,5 @@
 
 .btn-dark {
 	margin-top: 10px;
+	margin-right: 5px;
 }

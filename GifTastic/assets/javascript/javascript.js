@@ -38,6 +38,7 @@ $(document).ready(function() {
                 var showImage = $('<img>');
                 showImage.addClass('imageClass');
                 showImage.attr('src', results[i].images.fixed_height_still.url);
+                showImage.attr('data-state', 'still');
                 showImage.attr('data-animate', results[i].images.fixed_height.url);
                 showImage.attr('data-still', results[i].images.fixed_height_still.url);
 

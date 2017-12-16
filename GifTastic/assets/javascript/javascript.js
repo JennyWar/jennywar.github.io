@@ -103,8 +103,4 @@ $(document).ready(function() {
         console.log(this);
     });
 
-    $(document).on('click', '.body', function() {
-
-    })
-
 });

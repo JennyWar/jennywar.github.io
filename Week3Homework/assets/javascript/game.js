@@ -45,7 +45,7 @@ document.onkeyup = function(event) {
 
 
 
-// have the players guess show up instead of the blank dashes//
+// have the letters players guess show up instead of the blank dashes//
 
 if(superPerson.indexOf(alphabetUsed) > -1) {
 
@@ -54,6 +54,7 @@ if(superPerson.indexOf(alphabetUsed) > -1) {
 	// dashes[superPerson.indexOf(alphabetUsed)] = alphabetUsed;
 	// console.log(dashes);
 	// document.getElementById("ghostLtr").innerHTML = dashes;
+	
 	for(var i = 0; i < superPerson.length; i++) {
 		if(superPerson[i] === alphabetUsed) {
 			answerArray[i] = alphabetUsed;

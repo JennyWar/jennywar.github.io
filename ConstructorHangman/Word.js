@@ -1,44 +1,54 @@
-// Word.js: Contains a constructor, Word that depends on the Letter 
-// constructor.This is used to create an object representing the current 
-// word the user is attempting to guess.That means the constructor should 
-// define:
-// An array of new Letter objects representing the letters of the underlying 
-// word
-// A function that returns a string representing the word.This should call 
-// the function on each letter 
-// object(the first function defined in Letter.js) that displays the 
-// character or an underscore and concatenate those together.
-// A function that takes a character as an argument and calls the 
-// guess function on each letter 
-// object(the second function defined in Letter.js)
-
 // require the letter.js file
 const Letter = require('./Letter.js');
 
-function Word (wrd) {
+function Word(wrd) {
     const that = this;
     this.word = wrd;
     this.letters = [];
     this.correctWordGuess = false;
 
-    this.getLetter = function() {
-        // populate the word with the letter objects
-        for(const i = 0; i < that.word.length; i++) {
+    this.getLetter = function () {
+        // function to check if letter guessed was correct
+        for (const i = 0; i < that.word.length; i++) {
             const newLetter = new Letter(that.word[i]);
-            this.letters.push(newLetter); 
-        }   
+            this.letters.push(newLetter);
+        }
+    };
+
+    // function to check if you found the word
+    this.isWordFound = function () {
+        if (this.letters.every(function (ltrChosen) {
+                return ltrChosen.guessed === true;
+            })) {
+            this.correctWordGuess = true;
+            return true;
+        }
+    };
+
+    // replace the letter if it was correct
+    this.isLetterFound = function(guessedLetter) {
+        const shouldItBeReturned = 0;
+        this.letters.forEach(function(ltrChosen) {
+            if(ltrChosen.letter === guessedLetter) {
+                ltrChosen.guessed = true;
+                shouldItBeReturned++;
+            }
+        })
+        // replace the underscore with the letter if the guess is correct
+        return shouldItBeReturned;
+    };
+
+    // word render that displays the word to the screen
+    this.wordRender = function() {
+        const display = '';
+        that.letters.forEach(function(ltrChosen) {
+            const currentLetter = ltrChosen.letterRender();
+            display += currentLetter;
+        });
+        
+        return display;
     }
-    // function to check if letter guessed was correct
-    
 };
 
 
-
-// function to check if you found the word 
-
-// word render that displays to the screen
-
-
 module.exports = Word;
-
-

@@ -140,33 +140,49 @@ function notEnoughStock() {
         type: 'list',
         message: 'Would you like to place another order?',
         choices: ['Yes', 'No']
-    }]).then (function (answers) {
-        if (answers.notEnough === 'Yes' ){
+    }]).then(function (answers) {
+        if (answers.notEnough === 'Yes') {
             runSearch();
         } else if (answers.notEnough === 'No') {
             connection.end();
-            console.log('Goodbye');
+            console.log('=====\nGoodbye\n=====');
             break;
         }
     })
 }
 
 //======================= function to place the order and update stock quantity DB
-function placeOrder(stockQuantity, units, itemId) {
-    let stockQuantity = stockQuantity - units;
-    connection.query("UPDATE products SET stock_quantity =" + stockQuantity + ' WHERE item_id =' + itemId, function(err, res) {
+function placeOrder(inventory, units, itemId) {
+    console.log('=====\nWe are fulfilling your order.....\n=====');
+    inventory = inventory - units;
+    connection.query("UPDATE products SET stock_quantity =" + inventory + ' WHERE item_id =' + itemId, function (err, res) {
         if (err) throw err;
-        totalPurchase(chosenID, chosenQuantity);
+        totalPurchase(itemId, units);
     });
 }
 
 // ============================ function to show the user the total cost of their purchase
 function totalPurchase(chosenID, chosenQuantity) {
-    connection.query('SELECT price FROM products WHERE item_id =' + chosenID, function(err, res) {
+    connection.query('SELECT price FROM products WHERE item_id =' + chosenID, function (err, res) {
         let itemPrice = res[0].price;
         let totatlPrice = (itemPrice * chosenQuantity);
-        console.log('Thank you for your purchase. \nThe total of your order is: ' + '$' + totatlPrice);
-        runSearch();
+        console.log('\nThank you for your purchase. \nThe total of your order is: ' + '$' + totatlPrice + '\n');
     })
-}
+    setTimeout(function () {
 
+
+        inquirer.prompt([{
+            name: 'anotherOrder',
+            type: 'list',
+            message: 'Would you like to place another order?',
+            choices: ['Yes', 'No']
+        }]).then(function (answers) {
+            if (answers.anotherOrder === 'Yes') {
+                runSearch();
+            } else if (answers.anotherOrder === 'No') {
+                connection.end();
+                console.log('=====\nGoodbye\n=====');
+            }
+        });
+    }, 1000);
+}

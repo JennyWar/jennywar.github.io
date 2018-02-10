@@ -144,7 +144,6 @@ function notEnoughStock() {
         } else if (answers.notEnough === 'No') {
             connection.end();
             console.log('=====\nGoodbye\n=====');
-            break;
         }
     })
 }
@@ -161,14 +160,15 @@ function placeOrder(inventory, units, itemId) {
 
 // ============================ function to show the user the total cost of their purchase
 function totalPurchase(chosenID, chosenQuantity) {
+    // update the DB with the 
     connection.query('SELECT price FROM products WHERE item_id =' + chosenID, function (err, res) {
         let itemPrice = res[0].price;
-        let totatlPrice = (itemPrice * chosenQuantity);
-        console.log('\nThank you for your purchase. \nThe total of your order is: ' + '$' + totatlPrice + '\n');
+        let totalPrice = (itemPrice * chosenQuantity);
+        console.log('\nThank you for your purchase. \nThe total of your order is: ' + '$' + totalPrice + '\n');
     })
 
     setTimeout(function () {
-
+        // ask the user if they would like to make another purchase or if they would like to exit
         inquirer.prompt([{
             name: 'anotherOrder',
             type: 'list',
@@ -183,5 +183,5 @@ function totalPurchase(chosenID, chosenQuantity) {
             }
         });
 
-    }, 1000);
+    }, 2000);
 }

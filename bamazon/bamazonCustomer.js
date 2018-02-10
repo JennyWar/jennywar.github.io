@@ -119,47 +119,54 @@ function checkInventory(item, quantity) {
         if (err) throw err;
         for (var i = 0; i < res.length; i++) {
             var productInventory = res[i].stock_quantity;
-            
-        }
-       
-       
 
-});
+            if (productInventory < quantity) {
+                console.log('Insufficient Quantity! We only have ' + productInventory + ' of that product available');
+                notEnoughStock();
+            } else if (productInventory >= quantity) {
+                placeOrder(productInventory, item, quantity);
+            }
+        }
+
+    });
 
 }
 
 
-//============================= function to place the order
-
-function placeOrder(item, chosenQuantity, quantityNeeded) {
-    connection.query('SELECT stock_quantity FROM products WHERE item_id = '+ item, function(error, response) {
-        console.log(response);
-    //     if (err) {
-    //         console.log(err);
-    //      }
-    //     if (quantityNeeded >= chosenQuantity ) {
-
-    //     }
+//====================== function if there is not enough stock to fulfill order
+function notEnoughStock() {
+    inquirer.prompt([{
+        name: 'notEnough',
+        type: 'list',
+        message: 'Would you like to place another order?',
+        choices: ['Yes', 'No']
+    }]).then (function (answers) {
+        if (answers.notEnough === 'Yes' ){
+            runSearch();
+        } else if (answers.notEnough === 'No') {
+            connection.end();
+            console.log('Goodbye');
+            break;
+        }
     })
 }
 
-// ============================ function to show the user the total cost of their purchase
-// function totalPurchase() {
-//     // runSearch();
-// }
+//======================= function to place the order and update stock quantity DB
+function placeOrder(stockQuantity, units, itemId) {
+    let stockQuantity = stockQuantity - units;
+    connection.query("UPDATE products SET stock_quantity =" + stockQuantity + ' WHERE item_id =' + itemId, function(err, res) {
+        if (err) throw err;
+        totalPurchase(chosenID, chosenQuantity);
+    });
+}
 
-// ==================== function to delete the quantity from the DB
-// function deleteProduct() {
-//     console.log("Deleting all strawberry icecream...\n");
-//     connection.query(
-//         "DELETE FROM products WHERE ?",
-//         {
-//             flavor: "strawberry"
-//         },
-//         function (err, res) {
-//             console.log(res.affectedRows + " products deleted!\n");
-//             // Call readProducts AFTER the DELETE completes
-//             readProducts();
-//         }
-//     );
-// }
+// ============================ function to show the user the total cost of their purchase
+function totalPurchase(chosenID, chosenQuantity) {
+    connection.query('SELECT price FROM products WHERE item_id =' + chosenID, function(err, res) {
+        let itemPrice = res[0].price;
+        let totatlPrice = (itemPrice * chosenQuantity);
+        console.log('Thank you for your purchase. \nThe total of your order is: ' + '$' + totatlPrice);
+        runSearch();
+    })
+}
+

@@ -108,7 +108,6 @@ function selectProduct() {
             });
             checkInventory(chosenItem, chosenQuantity);
         });
-
 }
 
 
@@ -131,7 +130,6 @@ function checkInventory(item, quantity) {
     });
 
 }
-
 
 //====================== function if there is not enough stock to fulfill order
 function notEnoughStock() {
@@ -168,8 +166,8 @@ function totalPurchase(chosenID, chosenQuantity) {
         let totatlPrice = (itemPrice * chosenQuantity);
         console.log('\nThank you for your purchase. \nThe total of your order is: ' + '$' + totatlPrice + '\n');
     })
-    setTimeout(function () {
 
+    setTimeout(function () {
 
         inquirer.prompt([{
             name: 'anotherOrder',
@@ -184,5 +182,6 @@ function totalPurchase(chosenID, chosenQuantity) {
                 console.log('=====\nGoodbye\n=====');
             }
         });
+
     }, 1000);
 }

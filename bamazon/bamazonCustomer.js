@@ -144,6 +144,7 @@ function notEnoughStock() {
         } else if (answers.notEnough === 'No') {
             connection.end();
             console.log('=====\nGoodbye\n=====');
+
         }
     })
 }

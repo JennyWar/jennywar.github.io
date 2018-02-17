@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 3000;
 // ==================================================
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 // Static files
@@ -29,7 +31,7 @@ require('./app/routing/htmlRoutes.js')(app);
 // Start the server to begin listening
 //===============================================
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log('App listening on PORT ' + PORT);
 });
 
 

@@ -9,30 +9,47 @@ module.exports = function(app) {
 
     // GET route to get all possible friends in JSON
     //==============================================
-    app.get("/api/friends", function (req, res) {
-        res.send(friends)
+    app.get('/api/friends', function (req, res) {
+        res.json(friends);
     });
     
     // POST route to submit the users data in JSON format to the server
     // ========================================================
-    app.post("/api/friends", function (req, res) {
+    app.post('/api/friends', function (req, res) {
 
-        const newFriend = req.body;
-        
+        // This object is used to hold the closest match for the user    
+        const bestMatch = {
+            name: "",
+            photo: "",
+            friendDifference: 1000
+        };
 
-        if (newFriend.length < 5) {
+        // We will take the user's survey results and parse the data
+        const userData = req.body;
+        const userName = userData.name;
+        const userPhoto = userData.photo;
+        const userScores = userData.scores;
 
-            reservations.push(newReservation);
+        // variable to help calculate the difference betweent the users scores and other scores
+        const totalDifference = 0;
 
-        } else {
-            waitlist.push(newReservation);
-            var waitlisted = true;
+        // loop through all fo the friend possibilities
+        for (var i = 0; i < friends.length; i++) {
+            console.log(friends[i].name);
+            totalDifference = 0;
+
+            for (var j = 0; j < friends[i].scores[j]; j++) {
+                totalDifference += Math.abs(parseFloat(userScores[j]) - parseFloat(userScores[i].scores[j]));
+                if (totalDifference <= bestMatch.friendDifference) {
+                   bestMatch.name = friends[i].name;
+                   bestMatch.photo = friends[i].photo;
+                   bestMatch.friendDifference = totalDifferenc;e
+                }
+            }
         }
-        //passes into the jquery post
-        res.json(argument);
+
+        friends.push(userData);
+
+        res.json(bestMatch);
     });
-
-    // A POST routes /api/friends. This will be used to handle incoming survey results. 
-    // This route will also be used to handle the compatibility logic.
-
 }

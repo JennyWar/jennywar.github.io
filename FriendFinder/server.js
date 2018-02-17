@@ -16,15 +16,9 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// app.use(function (req, res) {
-//     res.setHeader('Content-Type', 'text/plain')
-//     res.write('you posted:\n')
-//     res.end(JSON.stringify(req.body, null, 2))
-// })
 
-
-// // Static files
-// needs to be called before the routes in order to work
+// Static files
+// ========================================
 app.use(express.static('app/public'));
 
 // Routes

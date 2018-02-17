@@ -4,7 +4,7 @@ const path = require('path');
 
 // Routes
 // ==========================================
-module.exports = function(app) {
+module.exports = function (app) {
     // route the user to the home page
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, '/../public/home.html'));

@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const PORT = process.env.PORT || 3000;
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -7,12 +8,11 @@ const connection = mysql.createConnection({
     database: "burgers_db"
 });
 
-connection.connect(function (err) {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
-    }
-    console.log("connected as id " + connection.threadId);
+// Start the server to begin listening
+//===============================================
+app.listen(PORT, function () {
+    console.log('App listening on PORT ' + PORT);
 });
+
 
 module.exports = connection;

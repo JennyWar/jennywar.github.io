@@ -1,6 +1,13 @@
+// ============================
+// Dependencies 
+// ============================
 const mysql = require("mysql");
-const PORT = process.env.PORT || 3000;
+const path = require('path');
 
+
+// ==================================
+// Connect to sql burgers database
+// ==================================
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -8,11 +15,8 @@ const connection = mysql.createConnection({
     database: "burgers_db"
 });
 
-// Start the server to begin listening
-//===============================================
-app.listen(PORT, function () {
-    console.log('App listening on PORT ' + PORT);
-});
-
-
+// ======================================
+// Export the connection to other files
+// ======================================
 module.exports = connection;
+module.exports = PORT;

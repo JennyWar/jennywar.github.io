@@ -2,7 +2,6 @@
 // Dependencies 
 // ============================
 const mysql = require("mysql");
-const path = require('path');
 
 
 // ==================================
@@ -15,8 +14,9 @@ const connection = mysql.createConnection({
     database: "burgers_db"
 });
 
+
 // ======================================
 // Export the connection to other files
 // ======================================
 module.exports = connection;
-module.exports = PORT;
+

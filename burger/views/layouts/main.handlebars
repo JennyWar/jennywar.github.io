@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{!-- Tab Image --}}
-    <link rel="icon" href="assets/img/hamburger.png">
-    {{!-- Tab Title --}}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {{!-- Tab Image --}}
+    <link rel="icon" href="assets/img/hamburger.png"> {{!-- Tab Title --}}
     <title>Eat-Da-Burger!</title>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
+
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="/assets/css/burger_style.css">
 </head>
+
 <body>
-    <div class="titleAndImage">
+    <div class="titleAndImage row">
         <img src="/assets/img/burger.png">
         <h1>Eat-Da-Burger!</h1>
     </div>
-    <div class="burgerDescription">
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Textarea</label>
-                    </div>
+
+    <div>
+        {{!-- Where the index.handlebars burger content will be loaded --}}
+
+        {{{ body }}}
+
+
+    </div>
+    <div class="burgerDescription row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1"></label>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-    <div class="submitButton">
-        <a class="waves-effect waves-light btn" id="button">Submit</a>
+    <div class="submitButton row">
+        <a class="waves-effect waves-light btn-large" id="button">Submit</a>
     </div>
-    
+    <div class="userInstructions">
+        <p>Choose a Burger from the list. Then devour it.
+            <br>Don't see a burger you like? Enter a Burger of your choice to the list using the submit form below.
+        </p>
+    </div>
+
+
+
     <!-- Link in jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </body>
+
 </html>

@@ -22,9 +22,14 @@ const orm = {
             // console.log(result);
         })
     },
-    // updateOne: function() {
-
-    // }
+    
+    updateOne: function(burger_name, devoured, id, onResult) {
+        const query = 'UPDATE burgers SET ?? = ? WHERE id = ?';
+        connection.query(query, [burger_name, devoured, id], function(err, result) {
+            console.log(err);
+            onResult(err, result);
+        })
+    }
     
 };
 

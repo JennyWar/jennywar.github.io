@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 // require express-handlebars package
 const exphbs = require("express-handlebars");
 // get the plan routes from the burgers_controller.js file
-const planRoutes = require('./controllers/burgers_controller.js');
+const burgerRoutes = require('./controllers/burgers_controller.js');
   
 // Store the express package in a variable
 const app = express();
@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
 // Include the plan routes from the controller
-app.use(planRoutes);
+app.use(burgerRoutes);
 
 
 // ==============================================

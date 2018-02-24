@@ -1,10 +1,45 @@
-{{!-- // Create a button in index.handlebars that will submit the user input into the database. --}}
 {{!-- Burgers that are ready to be devoured --}}
-<div>
-    <h3>Feeling Hungry?</h3>
+
+<div class="feelingHungry">
+    <h3 class="feelingHungryTitle">Feeling Hungry?</h3>
+        <div id="readytoDevour">
+
+            {{!-- insert burgers here --}}
+
+            {{ #each burgers }}
+                {{ #unless devoured}}
+
+                <form  action="burger/eat/{{ id}}" method="POST" class="col s12">
+                    <div class="row">
+                        <li class="input-field col s12">{{id}} .{{burger_name}}</li>
+                            <a class="waves-effect waves-light btn">
+                                <i class="sentiment_very_satisfied right">verySatisfied</i> Devour It!
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+                {{ /unless }}
+            {{ /each }}
+
+        </div>
 </div>
 
-{{!-- Burgers that have been devoured --}}
-<div>
-    <h3>Devoured Burgers:</h3>
+
+{{!-- Burgers that have been devoured on the right side of the screen--}}
+
+<div class="feelingfull">
+    <h3 class="devouredBurgersTitle">Devoured Burgers:</h3>
+        <div id="devouredBurgers">
+           
+            {{!-- Inser the devoured burgers --}}
+
+            {{ #each burgers }}
+                {{ #if this.devoured }}
+
+                {{ /if }}
+            {{ /each }}
+
+            
+        </div>
 </div>
